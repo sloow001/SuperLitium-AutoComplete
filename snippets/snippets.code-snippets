@@ -1,0 +1,488 @@
+{
+    // TEMPLATES
+    "starter_template":
+    {
+        "prefix": "_starter_temp",
+        "body": [
+            "function _init()",
+            "",
+            "--the _init function occurs when we start the game",
+            "--for example, when we start the game we will put variables that we will change late",
+            "--x = 90 (x position of our player)",
+            "--vel = 5 (velocity of our player)",
+            "",
+            "end",
+            "",
+            "function _render()",
+            "",
+            "--the _render() function serves to render everything that is being drawn on the screen", 
+            "--we use this function a lot together with litgraphics, for example: we will draw a shape when we start the game",
+            "--litiumapi.litgraphics.rect('fill', x, 90, 32, 32, 4) here the variable x that we set earlier will serve as the position of our player",
+            "",
+            "end",
+            "",
+            "function _update(elapsed)",
+            "",
+            "--the _update(elapsed) function is called every frame of the game, often used to, for example, find out if the player has touched a wall, if he is moving, etc.",
+            "--as an example, let's move the shape we created in _render! (using litinput)",
+            "",
+            "--if litiumapi.litinput.keyboard.isKeyDown('left') then",
+            "-- x = x - vel",
+            "--here we are doing a simple check to see if we are pressing the left key, if so we will take the current x position of our player and we will subtract it by the speed of our player, thus making it move to the left",
+            "-- ",
+            "--end",
+    
+            "if litiumapi.litinput.keyboard.isKeyDown('right') then",
+            "  x = x + 2",
+            "end",
+            "",
+            "end",
+            "",
+            "function keydown(k, code)",
+            "",
+            "end",
+            "",
+            "function _gamepaddown(jstk, button)",
+            "",
+            "end"
+        ],
+        "description": "recommended template for beginners in superlitium, has several comments explaining simple things"
+    },
+
+    "template":
+    {
+        "prefix": "_temp",
+        "body": 
+        [
+            "function _init()",
+            "",
+            "end",
+            "",
+            "function _render()",
+            "",
+            "end",
+            "",
+            "function _update(elapsed)",
+            "",
+            "end",
+            "",
+            "function _keydown(k, code)",
+            "",
+            "end"
+        ],
+        "description": "template without any comments, totally empty, just callback functions"
+    },
+
+    // CALL BACK FUNCTIONS
+    "init callback function":
+    {
+        "prefix": "_init",
+        "body": 
+        [
+            "function _init()",
+            "",
+            "end"
+        ],
+        "description": "This function is called exactly once at the beginning of the game."
+    },
+
+    "render callback function":
+    {
+        "prefix": "_render",
+        "body": 
+        [
+            "function _render()",
+            "",
+            "end"
+        ],
+        "description": "This function is called every frame, drawing all stuff on screen"
+    },
+
+    "update callback function":
+    {
+        "prefix": "_update",
+        "body": 
+        [
+            "function _update(elapsed)",
+            "",
+            "end"
+        ],
+        "description": "This function is called every frame, used to update the state of the game every frame."
+    },
+
+    "keydown callback function": 
+    {
+        "prefix": "_keydown",
+        "body": 
+        [
+            "function _keydown(k, code)",
+            "",
+            "end"
+        ],
+        "description": "This function is called when a key is pressed."
+    },
+
+    "gamepad callback function": 
+    {
+        "prefix": "_gamepad",
+        "body": [
+            "function _gamepaddown(jstk, button)",
+            "",
+            "end"
+        ],
+        "description": "This function is called when a joystick or controller button is pressed.",
+    },
+
+    // LITIUMAP | FUNC
+    "litiumapi":
+    {
+        "prefix": "litiumapii",
+        "body": "litiumapii.${1|litgraphics.,litinput.,litgame.,litsave.,litaudio.|}",
+        "description": "The main module API Stack.",
+    },
+
+    //OTHERS
+    "keyboard":
+    {
+        "prefix": "keyboard",
+        "body": "keyboard.",
+        "description": "keyboard for litinput keyboard functions"
+    },
+
+    "mouse":
+    {
+        "prefix": "mouse",
+        "body": "mouse.",
+        "description": "mouse for litinput mouse functions"
+    },
+
+    "collision":
+    {
+        "prefix": "collision",
+        "body": "collision.",
+        "description": "collision for litgame function"
+    },
+
+    "control":
+    {
+        "prefix": "control",
+        "body": "control.",
+        "description": "controls for litaudio"
+    },
+
+    //LIT GRAPHICS FUNCTIONS
+    "newSprite":
+    {
+        "prefix": "newSprite()",
+        "body": "newSprite(${1:})",
+        "description":
+        [
+            "Use this with litiumapi.litgraphics!!!",
+            "",
+            "Create a new sprite on X and \nY coordinates and size",
+            "",
+            "Parameters\nTable: sprite Usage: the sprite table,\nrequired to draw\nNumber: x Usage: X coordinate\nNumber: y Usage: Y coordinate\nNumber: size Usage: the sprite size",
+            ""
+        ]
+    },
+
+    "rect": 
+    {
+        "prefix": "rect()",
+        "body": "rect(${1:})",
+        "description":
+        [
+            "Use this with litiumapi.litgraphics!!!",
+            "",
+            "Create a new rectangle.",
+            "",
+            "Parameters\nString: filltype \nUsage: the way rect is draw, \ncan be fill or line\nNumber: x Usage: X coordinate\nNumber: y Usage: Y coordinate\nNumber: w Usage: rectangle width\nNumber: h Usage: rectangle height\nNumber: color Usage: color id\n based on color table",
+            ""
+        ]
+    },
+
+    "backgroundColor":
+    {
+        "prefix": "backgroundColor()",
+        "body": "backgroundColor(${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litgraphics!!!",
+            "",
+            "Set the background color based in a \nID of a color table.",
+            "",
+            "Parameters\nNumber: color \nUsage: color id based on color table",
+            ""
+        ]
+    },
+    
+    "newText":
+    {
+       "prefix": "newText()",
+       "body": "newText(${1:})",
+       "description": 
+       [
+            "Use this with litiumapi.litgraphics!!!",
+            "",
+            "Create a new text.",
+            "",
+            "Parameters\nString: text Usage: The main string you want display\nNumber: x Usage: X coordinate\nNumber: y Usage: Y coordinate\nNumber: size Usage: pixel size\nNumber: txtcolor \nUsage: text color id based on \ncolor table\nNumber: background \nUsage: background color id based on \ncolor table",
+            ""
+       ]
+    },
+
+    "getWindowSize()":
+    {
+        "prefix": "getWindowSize()",
+        "body": "getWindowSize(${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litgraphics!!!",
+            "",
+            "return the window width and height",
+            ""
+        ]
+    },
+
+    "loadSpriteFile()": 
+    {
+        "prefix": "loadSpriteFile()",
+        "body": "loadSpriteFile(${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litgraphics!!!",
+            "",
+            "return loaded content from a .spr file",
+            "",
+            "Parameters\nString: text\nUsage: the main string you want display",
+            ""
+        ]
+        
+    },
+
+    //LITINPUT FUNCTIONS
+    "isKeyDown()": 
+    {
+        "prefix": "isKeyDown()",
+        "body": "isKeyDown(${1:})",
+        "description":
+        [
+            "Use this with \nlitiumapi.litinput.keyboard!!!",
+            "", 
+            "This event will call while \na key is down",
+            "",
+            "Parameters\nString: key \nUsage: The key you want check is down",
+            "",
+            "Return Boolean : Key is down"
+        ]
+    },
+
+    "isButtonDown()": 
+    {
+        "prefix": "isButtonDown()",
+        "body": "isButtonDown(${1:})",
+        "description":
+        [
+            "Use this with \nlitiumapi.litinput.mouse!!!",
+            "",
+            "This event will run while a \nmouse button pressed.",
+            "",
+            "Parameters\nNumber: button\nUsage: The mouse button you want check is down\nAloowed Buttons: 1-6",
+            "",
+            "Return Boolean: Button is down",
+        ]
+    },
+
+    "getMousePosition()": 
+    {
+        "prefix": "getMousePosition()",
+        "body": "getMousePosition(${1:})",
+        "description": 
+        [
+            "Use this with \nlitiumapi.litinput.mouse!!!",
+            "",
+            "This event will return the mouse position.",
+            "",
+            "Return: Mouse x position\n Mouse y position"
+        ]
+    },
+
+    "quit()": 
+    {
+        "prefix": "quit()",
+        "body": "quit(${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litgame!!!",
+            "",
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "Shutdown the Superlitium application.",
+        ]
+    },
+
+    "objectMeeting()": 
+    {
+        "prefix": "objectMeeting()",
+        "body": "objectMeeting(${1:})",
+        "description": 
+        [
+            "Use this with \nlitiumapi.litgame.collision!!!",
+            "",
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "Check collision of two objects",
+            "",
+            "Parameters\nTable: obj1 \nUsage: The object you \nwant test collision\nTable: obj2 \nUsage: The second object you \nwant test collision",
+            "",
+            "Return Boolean: Object collides"
+        ]
+    },
+
+    "rectMetting()": 
+    {
+        "prefix": "rectMetting()",
+        "body": "rectMetting(${1:})",
+        "description":
+        [
+            "Use this with \nlitiumapi.litgame.collision!!!",
+            "", 
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "Check collision of two rectangles",
+            "",
+            "Parameters\nTable: rect1\nUsage: The Rectangle you want \ntest collision\nTable: rect2\nUsage: The second Rectangle you want \ntest collision",
+            "",
+            "Return Boolean: Rectangle collides"
+        ]
+    },
+
+    //LITSAVE FUNCTIONS
+    "saveData()": 
+    {
+        "prefix": "saveData()",
+        "body": "saveData${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litsave!!!",
+            "",
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "Save the table.",
+            "",
+            "Parameters\nString: saveName\nUsage: The name of your save\nString: dataTable\nUsage: The table you want save",
+        ]
+    },
+    
+    "loadSavedata()":
+    {
+        "prefix": "loadSavedata()",
+        "body": "loadSavedata(${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litsave!!!",
+            "",
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "Load the table.",
+            "",
+            "Parameters\nString: saveName\nUsage: The name of your save (string)",
+            "",
+            "Return Table: the save table",
+        ]
+    },
+
+    "isSaveExist()":
+    {
+        "prefix": "isSaveExist()",
+        "body": "isSaveExist(${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litsave!!!",
+            "",
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "Load the table.",
+            "",
+            "Parameters\nString: saveName\nUsage: The name of your save",
+            "",
+            "Return Boolean: Save exist",
+        ]
+    },
+
+    //LITAUDIO FUNCTIONS
+
+    "newSource()": 
+    {
+        "prefix": "newSource()",
+        "body": "newSource(${1:})",
+        "description": 
+        [
+            "Use this with litiumapi.litaudio!!!",
+            "",
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "create a new sound source \nbut don't play it",
+            "",
+            "Parameters\nString: sourceName\nUsage: The name of your sound source\nTable: songData\nUsage: The table that contains a valid song values",
+        ]
+    },
+
+    "updateSource()": 
+    {
+        "prefix": "updateSource()",
+        "body": "updateSource(${1:})",
+        "description":
+        [
+            "Use this with litiumapi.litaudio!!!",
+            "",
+            "WARNING\nIf you are a beginner, \nI recommend seeing the engine wiki\nto understand better",
+            "",
+            "update sound sources and play based on tag",
+            "",
+            "Parameters\nString: sourceName\nUsage: The name of your sound source"
+        ]
+    },
+
+    "play()": 
+    {
+        "prefix": "play()",
+        "body": "play(${1:})",
+        "description":
+        [
+            "Use this with \nlitiumapi.litaudio.control!!!",
+            "",
+            "Play a sound source based on it tag",
+            "",
+            "Usage: \nlitiumapi.litaudio.control.play(tag)"
+        ]
+    },
+
+    "stop()": 
+    {
+        "prefix": "stop()",
+        "body": "stop(${1:})",
+        "description":
+        [
+            "Use this with \nlitiumapi.litaudio.control!!!",
+            "",
+            "Stop a sound source based on it tag",
+            "",
+            "Usage: \nlitiumapi.litaudio.control.play(tag)"
+        ]
+    },
+
+    "pause()": 
+    {
+        "prefix": "pause()",
+        "body": "pause(${1:})",
+        "description":
+        [
+            "Use this with \nlitiumapi.litaudio.control!!!",
+            "",
+            "Pause a sound source based on it tag",
+            "",
+            "Usage: \nlitiumapi.litaudio.control.play(tag)"
+        ]
+    }
+} // ufa, acabou kkkkk
