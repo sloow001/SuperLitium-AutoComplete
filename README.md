@@ -1,4 +1,6 @@
-# superlitium-snippets README
+# README
+
+![Screensho1](https://raw.githubusercontent.com/Litium-org/SuperLitium/master/assets/SuperLitiumBanner.png)
 
 Superlitium Snippets is an extension that auto complete functions and callbacks of superlitium game framework. For a better understanding of all functions is recommended read the engine wiki.
 
