@@ -1,25 +1,37 @@
 {
-  "name": "superlitium-autocomplete",
-  "displayName": "SuperLitium AutoComplete",
-  "description": "",
-  "version": "1.0.0",
-  "engines": {
-    "vscode": "^1.74.0"
-  },
-  "icon": "icon.png",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sloow001/SuperLitium-AutoComplete"
-  },
-  "categories": [
-    "Snippets"
-  ],
-  "contributes": {
-    "snippets": [
-      {
-        "language": "lua",
-        "path": "./snippets/snippets.code-snippets"
-      }
-    ]
-  }
+	"name": "superlitium-snippets",
+	"displayName": "SuperLitium Snippets",
+	"description": "AutoComplete for SuperLitium Engine",
+	"version": "1.0.1",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sloow001"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"publisher": "sloow001",
+	"contributes": {
+		"snippets": [
+			{
+				"language": "lua",
+				"path": "./snippets/snippets.code-snippets"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1673627107716,
+		"id": "16dc2d08-2b76-4ad9-bf68-a34d095e955f",
+		"publisherId": "89c4ed7c-608b-48a5-9000-0fc93721f97e",
+		"publisherDisplayName": "sloow",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false
+	}
 }
